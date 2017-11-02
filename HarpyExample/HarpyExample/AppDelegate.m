@@ -22,7 +22,6 @@
     [self.window makeKeyAndVisible];
 
     // Set the UIViewController that will present an instance of UIAlertController
-    NSLog(@"self.window: %@", self.window);
     [[Harpy sharedInstance] setParentView:self.window];
 
     // (Optional) Set the Delegate to track what a user clicked on, or to use a custom UI to present your message.
