@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		35CA9CF11FAB8888008270F1 /* UIView+Borders.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA9CF01FAB8888008270F1 /* UIView+Borders.m */; };
 		35CA9CF61FAB8967008270F1 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA9CF41FAB8967008270F1 /* AlertView.m */; };
-		35CA9CF71FAB8967008270F1 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35CA9CF51FAB8967008270F1 /* AlertView.xib */; };
 		35CA9CF81FAB897E008270F1 /* AlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 35CA9CF31FAB8967008270F1 /* AlertView.h */; };
 		35CA9CF91FAB8988008270F1 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA9CF41FAB8967008270F1 /* AlertView.m */; };
 		35CA9CFA1FAB898C008270F1 /* UIView+Borders.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA9CF01FAB8888008270F1 /* UIView+Borders.m */; };
 		35CA9CFB1FAB8992008270F1 /* UIView+Borders.h in Headers */ = {isa = PBXBuildFile; fileRef = 35CA9CEF1FAB8888008270F1 /* UIView+Borders.h */; };
-		35CA9CFC1FAB89B3008270F1 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35CA9CF51FAB8967008270F1 /* AlertView.xib */; };
+		35CA9D001FABAE40008270F1 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35CA9CFE1FABAE40008270F1 /* AlertView.xib */; };
+		35CA9D011FABAE40008270F1 /* Harpy.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 35CA9CFF1FABAE40008270F1 /* Harpy.bundle */; };
+		35CA9D021FABAE6D008270F1 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35CA9CFE1FABAE40008270F1 /* AlertView.xib */; };
+		35CA9D031FABAE6D008270F1 /* Harpy.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 35CA9CFF1FABAE40008270F1 /* Harpy.bundle */; };
 		55B03A871E6A7A7200BE8DAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B03A841E6A7A7200BE8DAC /* AppDelegate.m */; };
 		55B03A881E6A7A7200BE8DAC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B03A861E6A7A7200BE8DAC /* ViewController.m */; };
 		55B03A8C1E6A7A7F00BE8DAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B03A8A1E6A7A7F00BE8DAC /* main.m */; };
@@ -23,7 +25,6 @@
 		8E2206551F8EE724003FB62C /* Harpy.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E2206531F8EE724003FB62C /* Harpy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E2206581F8EE724003FB62C /* Harpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2206511F8EE724003FB62C /* Harpy.framework */; };
 		8E2206591F8EE724003FB62C /* Harpy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2206511F8EE724003FB62C /* Harpy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8E22065D1F8EE730003FB62C /* Harpy.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8E78694A1E98B842001B4BBB /* Harpy.bundle */; };
 		8E22065E1F8EE732003FB62C /* Harpy.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E78694B1E98B842001B4BBB /* Harpy.h */; };
 		8E22065F1F8EE735003FB62C /* Harpy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E78694C1E98B842001B4BBB /* Harpy.m */; };
 		8EE663A81F99AF2900DACA88 /* HarpyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE663A61F99AF1D00DACA88 /* HarpyTests.m */; };
@@ -66,7 +67,8 @@
 		35CA9CF01FAB8888008270F1 /* UIView+Borders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Borders.m"; sourceTree = "<group>"; };
 		35CA9CF31FAB8967008270F1 /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
 		35CA9CF41FAB8967008270F1 /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
-		35CA9CF51FAB8967008270F1 /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
+		35CA9CFE1FABAE40008270F1 /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
+		35CA9CFF1FABAE40008270F1 /* Harpy.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Harpy.bundle; sourceTree = "<group>"; };
 		55B03A831E6A7A7200BE8DAC /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = HarpyExample/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		55B03A841E6A7A7200BE8DAC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = HarpyExample/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		55B03A851E6A7A7200BE8DAC /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = HarpyExample/ViewController.h; sourceTree = SOURCE_ROOT; };
@@ -80,7 +82,6 @@
 		8E2206511F8EE724003FB62C /* Harpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Harpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E2206531F8EE724003FB62C /* Harpy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Harpy.h; sourceTree = "<group>"; };
 		8E2206541F8EE724003FB62C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8E78694A1E98B842001B4BBB /* Harpy.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Harpy.bundle; sourceTree = "<group>"; };
 		8E78694B1E98B842001B4BBB /* Harpy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Harpy.h; sourceTree = "<group>"; };
 		8E78694C1E98B842001B4BBB /* Harpy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Harpy.m; sourceTree = "<group>"; };
 		8EE663A61F99AF1D00DACA88 /* HarpyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HarpyTests.m; sourceTree = "<group>"; };
@@ -128,9 +129,17 @@
 			children = (
 				35CA9CF31FAB8967008270F1 /* AlertView.h */,
 				35CA9CF41FAB8967008270F1 /* AlertView.m */,
-				35CA9CF51FAB8967008270F1 /* AlertView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		35CA9CFD1FABAE40008270F1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				35CA9CFE1FABAE40008270F1 /* AlertView.xib */,
+				35CA9CFF1FABAE40008270F1 /* Harpy.bundle */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		55CF3A1A1BC212E30023B63D = {
@@ -191,9 +200,9 @@
 		8E7869491E98B842001B4BBB /* Harpy */ = {
 			isa = PBXGroup;
 			children = (
+				35CA9CFD1FABAE40008270F1 /* Resources */,
 				35CA9CF21FAB8967008270F1 /* Views */,
 				35CA9CEE1FAB8888008270F1 /* Categories */,
-				8E78694A1E98B842001B4BBB /* Harpy.bundle */,
 				8E78694B1E98B842001B4BBB /* Harpy.h */,
 				8E78694C1E98B842001B4BBB /* Harpy.m */,
 			);
@@ -347,7 +356,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35CA9CF71FAB8967008270F1 /* AlertView.xib in Resources */,
+				35CA9D011FABAE40008270F1 /* Harpy.bundle in Resources */,
+				35CA9D001FABAE40008270F1 /* AlertView.xib in Resources */,
 				55B03A911E6A7A8500BE8DAC /* LaunchScreen.storyboard in Resources */,
 				55B03A921E6A7A8500BE8DAC /* Main.storyboard in Resources */,
 			);
@@ -357,8 +367,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35CA9CFC1FAB89B3008270F1 /* AlertView.xib in Resources */,
-				8E22065D1F8EE730003FB62C /* Harpy.bundle in Resources */,
+				35CA9D021FABAE6D008270F1 /* AlertView.xib in Resources */,
+				35CA9D031FABAE6D008270F1 /* Harpy.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
