@@ -12,7 +12,6 @@
 /// NSUserDefault macros to store user's preferences for HarpyAlertTypeSkip
 NSString * const HarpyDefaultSkippedVersion         = @"Harpy User Decided To Skip Version Update Boolean";
 NSString * const HarpyDefaultStoredVersionCheckDate = @"Harpy Stored Date From Last Version Check";
-static const NSInteger KTagAlertView                = 999192;
 
 /// i18n/l10n constants
 NSString * const HarpyLanguageArabic                = @"ar";
@@ -332,7 +331,7 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
 }
 
 - (void)showAlertOnTopOfEverything:(NSString *)currentAppStoreVersion {
-    UIView *childView = [self.parentView viewWithTag:KTagAlertView];
+    UIView *childView = [self.parentView viewWithTag:HardyTagAlertView];
     if (childView) {
         if ([self.delegate respondsToSelector:@selector(harpyDidShowUpdateDialog)]){
             [self.delegate harpyDidShowUpdateDialog];
@@ -341,7 +340,7 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
     }
     
     AlertView *alert = [AlertView createViewOn:self.parentView];
-    [alert setTag:KTagAlertView];
+    [alert setTag:HardyTagAlertView];
     [alert setTitleText:_updateAvailableMessage];
     [alert setDescriptionText:_theNewVersionMessage];
     [alert setUpdateActionBlock:^{

@@ -59,6 +59,8 @@ FOUNDATION_EXPORT NSString * const HarpyLanguageUkrainian;
 FOUNDATION_EXPORT NSString * const HarpyLanguageUrdu;
 FOUNDATION_EXPORT NSString * const HarpyLanguageVietnamese;
 
+static const NSInteger HardyTagAlertView  = 999192;
+
 @protocol HarpyDelegate <NSObject>
 
 @optional
