@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35CA9CE61FAB7D8F008270F1 /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA9CE41FAB7618008270F1 /* Alert.m */; };
+		35CA9CE71FAB7D99008270F1 /* Alert.h in Headers */ = {isa = PBXBuildFile; fileRef = 35CA9CE31FAB7618008270F1 /* Alert.h */; };
+		35CA9CE81FAB7DA5008270F1 /* Alert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35CA9CE11FAB7415008270F1 /* Alert.xib */; };
 		55B03A871E6A7A7200BE8DAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B03A841E6A7A7200BE8DAC /* AppDelegate.m */; };
 		55B03A881E6A7A7200BE8DAC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B03A861E6A7A7200BE8DAC /* ViewController.m */; };
 		55B03A8C1E6A7A7F00BE8DAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B03A8A1E6A7A7F00BE8DAC /* main.m */; };
@@ -54,6 +57,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		35CA9CE11FAB7415008270F1 /* Alert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Alert.xib; sourceTree = "<group>"; };
+		35CA9CE31FAB7618008270F1 /* Alert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Alert.h; sourceTree = "<group>"; };
+		35CA9CE41FAB7618008270F1 /* Alert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Alert.m; sourceTree = "<group>"; };
 		55B03A831E6A7A7200BE8DAC /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = HarpyExample/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		55B03A841E6A7A7200BE8DAC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = HarpyExample/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		55B03A851E6A7A7200BE8DAC /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = HarpyExample/ViewController.h; sourceTree = SOURCE_ROOT; };
@@ -162,6 +168,9 @@
 				8E78694A1E98B842001B4BBB /* Harpy.bundle */,
 				8E78694B1E98B842001B4BBB /* Harpy.h */,
 				8E78694C1E98B842001B4BBB /* Harpy.m */,
+				35CA9CE31FAB7618008270F1 /* Alert.h */,
+				35CA9CE41FAB7618008270F1 /* Alert.m */,
+				35CA9CE11FAB7415008270F1 /* Alert.xib */,
 			);
 			name = Harpy;
 			path = ../Harpy;
@@ -191,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E2206551F8EE724003FB62C /* Harpy.h in Headers */,
+				35CA9CE71FAB7D99008270F1 /* Alert.h in Headers */,
 				8E22065E1F8EE732003FB62C /* Harpy.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35CA9CE81FAB7DA5008270F1 /* Alert.xib in Resources */,
 				8E22065D1F8EE730003FB62C /* Harpy.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35CA9CE61FAB7D8F008270F1 /* Alert.m in Sources */,
 				8E22065F1F8EE735003FB62C /* Harpy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,7 +533,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = HT94948NDD;
 				INFOPLIST_FILE = "$(SRCROOT)/HarpyExample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apple.itunesconnect.mobile;
 				PRODUCT_NAME = HarpyExample;
@@ -535,7 +547,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = HT94948NDD;
 				INFOPLIST_FILE = "$(SRCROOT)/HarpyExample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apple.itunesconnect.mobile;
 				PRODUCT_NAME = HarpyExample;
@@ -561,7 +573,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Harpy/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sabintsev.Harpy;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -594,7 +606,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Harpy/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sabintsev.Harpy;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";

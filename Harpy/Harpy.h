@@ -91,6 +91,11 @@ typedef NS_ENUM(NSUInteger, HarpyAlertType)
 @property (nonatomic, strong) UIViewController *presentingViewController;
 
 /**
+ The UIViewController that will present an instance of UIAlertController
+ */
+@property (nonatomic, strong) UIView *parentView;
+
+/**
  The current version of your app that is available for download on the App Store
  */
 @property (nonatomic, copy, readonly) NSString *currentAppStoreVersion;

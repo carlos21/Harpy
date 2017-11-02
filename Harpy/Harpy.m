@@ -7,6 +7,7 @@
 //
 
 #import "Harpy.h"
+#import "Alert.h"
 
 /// NSUserDefault macros to store user's preferences for HarpyAlertTypeSkip
 NSString * const HarpyDefaultSkippedVersion         = @"Harpy User Decided To Skip Version Update Boolean";
@@ -102,8 +103,8 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
 #pragma mark - Public
 
 - (void)checkVersion {
-    if (!_presentingViewController) {
-        NSLog(@"[Harpy]: Please make sure that you have set _presentationViewController before calling checkVersion, checkVersionDaily, or checkVersionWeekly.");
+    if (!_presentingViewController && !_parentView) {
+        NSLog(@"[Harpy]: Please make sure that you have set _presentationViewController or _parentView before calling checkVersion, checkVersionDaily, or checkVersionWeekly.");
     } else {
         [self performVersionCheck];
     }
@@ -322,11 +323,17 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
     NSString *storedSkippedVersion = [[NSUserDefaults standardUserDefaults] objectForKey:HarpyDefaultSkippedVersion];
 
     if (![storedSkippedVersion isEqualToString:currentAppStoreVersion]) {
-        [self showAlertWithAppStoreVersion:currentAppStoreVersion];
+        [self showAlertOnTopOfEverything:currentAppStoreVersion];
     } else {
         // Don't show alert.
         return;
     }
+}
+
+- (void)showAlertOnTopOfEverything:(NSString *)currentAppStoreVersion {
+    Alert *alert = [Alert createViewOn:self.parentView];
+    [alert setTitleText:_updateAvailableMessage];
+    [alert setDescriptionText:_theNewVersionMessage];
 }
 
 - (void)showAlertWithAppStoreVersion:(NSString *)currentAppStoreVersion {
