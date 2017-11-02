@@ -1,22 +1,25 @@
 //
-//  Alert.m
+//  AlertView.m
 //  HarpyExample
 //
 //  Created by Carlos Duclos on 11/2/17.
 //  Copyright © 2017 Arthur Ariel Sabintsev. All rights reserved.
 //
 
-#import "Alert.h"
+#import "AlertView.h"
+#import "UIView+Borders.h"
 
-@interface Alert()
+@interface AlertView()
 
 @property (strong, nonatomic) IBOutlet UIView *view;
+@property (weak, nonatomic) IBOutlet UIView *centerView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UIButton *updateButton;
 
 @end
 
-@implementation Alert
+@implementation AlertView
 
 #pragma mark - Lifecycle
 
@@ -42,10 +45,14 @@
 
 - (void)setupView {
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-    self.view = [bundle loadNibNamed:NSStringFromClass([Alert class]) owner:self options:nil].firstObject;
+    self.view = [bundle loadNibNamed:NSStringFromClass([AlertView class]) owner:self options:nil].firstObject;
     [self addSubview:self.view];
     self.view.frame = self.bounds;
     self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    
+    self.centerView.layer.cornerRadius = 10.0;
+    self.centerView.layer.masksToBounds = YES;
+    [self.updateButton addTopBorderWithHeight:1.0 andColor:[UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1.0]];
 }
 
 - (void)createConstraintsOn:(UIView *)parentView {
@@ -59,13 +66,13 @@
 #pragma mark - Actions
 
 - (IBAction)updatePressed:(id)sender {
-    NSLog(@"updatePressed");
+    self.updateActionBlock();
 }
 
 #pragma mark - Public
 
 + (instancetype)createViewOn:(UIView *)parentView {
-    Alert *alert = [[Alert alloc] initWithFrame:CGRectZero];
+    AlertView *alert = [[AlertView alloc] initWithFrame:CGRectZero];
     alert.translatesAutoresizingMaskIntoConstraints = false;
     [parentView addSubview:alert];
     [alert createConstraintsOn:parentView];

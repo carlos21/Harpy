@@ -1,5 +1,5 @@
 //
-//  Alert.h
+//  AlertView.h
 //  HarpyExample
 //
 //  Created by Carlos Duclos on 11/2/17.
@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface Alert: UIView
+@interface AlertView: UIView
 
 @property (strong, nonatomic) NSString *titleText;
 @property (strong, nonatomic) NSString *descriptionText;
+@property (nonatomic, copy) void (^updateActionBlock)(void);
 
 + (instancetype)createViewOn:(UIView *)parentView;
 
