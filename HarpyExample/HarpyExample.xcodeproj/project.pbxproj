@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		35CA9CF11FAB8888008270F1 /* UIView+Borders.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA9CF01FAB8888008270F1 /* UIView+Borders.m */; };
-		35CA9CF61FAB8967008270F1 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA9CF41FAB8967008270F1 /* AlertView.m */; };
-		35CA9CF81FAB897E008270F1 /* AlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 35CA9CF31FAB8967008270F1 /* AlertView.h */; };
-		35CA9CF91FAB8988008270F1 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA9CF41FAB8967008270F1 /* AlertView.m */; };
-		35CA9CFA1FAB898C008270F1 /* UIView+Borders.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA9CF01FAB8888008270F1 /* UIView+Borders.m */; };
-		35CA9CFB1FAB8992008270F1 /* UIView+Borders.h in Headers */ = {isa = PBXBuildFile; fileRef = 35CA9CEF1FAB8888008270F1 /* UIView+Borders.h */; };
 		35CA9D001FABAE40008270F1 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35CA9CFE1FABAE40008270F1 /* AlertView.xib */; };
 		35CA9D011FABAE40008270F1 /* Harpy.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 35CA9CFF1FABAE40008270F1 /* Harpy.bundle */; };
 		35CA9D021FABAE6D008270F1 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35CA9CFE1FABAE40008270F1 /* AlertView.xib */; };
 		35CA9D031FABAE6D008270F1 /* Harpy.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 35CA9CFF1FABAE40008270F1 /* Harpy.bundle */; };
+		35CA9D081FABB01F008270F1 /* UIView+Borders.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA9D041FABB01E008270F1 /* UIView+Borders.m */; };
+		35CA9D091FABB01F008270F1 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA9D051FABB01F008270F1 /* AlertView.m */; };
+		35CA9D0A1FABB02A008270F1 /* AlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 35CA9D071FABB01F008270F1 /* AlertView.h */; };
+		35CA9D0B1FABB02A008270F1 /* UIView+Borders.h in Headers */ = {isa = PBXBuildFile; fileRef = 35CA9D061FABB01F008270F1 /* UIView+Borders.h */; };
+		35CA9D0C1FABB038008270F1 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA9D051FABB01F008270F1 /* AlertView.m */; };
+		35CA9D0D1FABB038008270F1 /* UIView+Borders.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA9D041FABB01E008270F1 /* UIView+Borders.m */; };
 		55B03A871E6A7A7200BE8DAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B03A841E6A7A7200BE8DAC /* AppDelegate.m */; };
 		55B03A881E6A7A7200BE8DAC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B03A861E6A7A7200BE8DAC /* ViewController.m */; };
 		55B03A8C1E6A7A7F00BE8DAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B03A8A1E6A7A7F00BE8DAC /* main.m */; };
@@ -63,12 +63,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		35CA9CEF1FAB8888008270F1 /* UIView+Borders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Borders.h"; sourceTree = "<group>"; };
-		35CA9CF01FAB8888008270F1 /* UIView+Borders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Borders.m"; sourceTree = "<group>"; };
-		35CA9CF31FAB8967008270F1 /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
-		35CA9CF41FAB8967008270F1 /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
 		35CA9CFE1FABAE40008270F1 /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
 		35CA9CFF1FABAE40008270F1 /* Harpy.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Harpy.bundle; sourceTree = "<group>"; };
+		35CA9D041FABB01E008270F1 /* UIView+Borders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Borders.m"; sourceTree = "<group>"; };
+		35CA9D051FABB01F008270F1 /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
+		35CA9D061FABB01F008270F1 /* UIView+Borders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Borders.h"; sourceTree = "<group>"; };
+		35CA9D071FABB01F008270F1 /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
 		55B03A831E6A7A7200BE8DAC /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = HarpyExample/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		55B03A841E6A7A7200BE8DAC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = HarpyExample/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		55B03A851E6A7A7200BE8DAC /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = HarpyExample/ViewController.h; sourceTree = SOURCE_ROOT; };
@@ -115,24 +115,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		35CA9CEE1FAB8888008270F1 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				35CA9CEF1FAB8888008270F1 /* UIView+Borders.h */,
-				35CA9CF01FAB8888008270F1 /* UIView+Borders.m */,
-			);
-			path = Categories;
-			sourceTree = "<group>";
-		};
-		35CA9CF21FAB8967008270F1 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				35CA9CF31FAB8967008270F1 /* AlertView.h */,
-				35CA9CF41FAB8967008270F1 /* AlertView.m */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		35CA9CFD1FABAE40008270F1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,8 +183,10 @@
 			isa = PBXGroup;
 			children = (
 				35CA9CFD1FABAE40008270F1 /* Resources */,
-				35CA9CF21FAB8967008270F1 /* Views */,
-				35CA9CEE1FAB8888008270F1 /* Categories */,
+				35CA9D071FABB01F008270F1 /* AlertView.h */,
+				35CA9D051FABB01F008270F1 /* AlertView.m */,
+				35CA9D061FABB01F008270F1 /* UIView+Borders.h */,
+				35CA9D041FABB01E008270F1 /* UIView+Borders.m */,
 				8E78694B1E98B842001B4BBB /* Harpy.h */,
 				8E78694C1E98B842001B4BBB /* Harpy.m */,
 			);
@@ -234,8 +218,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E2206551F8EE724003FB62C /* Harpy.h in Headers */,
-				35CA9CFB1FAB8992008270F1 /* UIView+Borders.h in Headers */,
-				35CA9CF81FAB897E008270F1 /* AlertView.h in Headers */,
+				35CA9D0A1FABB02A008270F1 /* AlertView.h in Headers */,
+				35CA9D0B1FABB02A008270F1 /* UIView+Borders.h in Headers */,
 				8E22065E1F8EE732003FB62C /* Harpy.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,8 +371,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35CA9CF61FAB8967008270F1 /* AlertView.m in Sources */,
-				35CA9CF11FAB8888008270F1 /* UIView+Borders.m in Sources */,
+				35CA9D091FABB01F008270F1 /* AlertView.m in Sources */,
+				35CA9D081FABB01F008270F1 /* UIView+Borders.m in Sources */,
 				55B03A871E6A7A7200BE8DAC /* AppDelegate.m in Sources */,
 				55B03A8C1E6A7A7F00BE8DAC /* main.m in Sources */,
 				55B03A881E6A7A7200BE8DAC /* ViewController.m in Sources */,
@@ -399,8 +383,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35CA9CFA1FAB898C008270F1 /* UIView+Borders.m in Sources */,
-				35CA9CF91FAB8988008270F1 /* AlertView.m in Sources */,
+				35CA9D0C1FABB038008270F1 /* AlertView.m in Sources */,
+				35CA9D0D1FABB038008270F1 /* UIView+Borders.m in Sources */,
 				8E22065F1F8EE735003FB62C /* Harpy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
