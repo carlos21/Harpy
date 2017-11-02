@@ -5,7 +5,7 @@
   s.homepage     = "https://github.com/ArtSabintsev/Harpy"
   s.platform     = :ios, '9.0'
   s.source       = { :git => "https://github.com/ArtSabintsev/Harpy.git", :tag => s.version.to_s }
-  s.source_files = 'Harpy/*'
+  s.source_files = 'Harpy/**'
   s.resources    = 'Harpy/Resources/*'
   s.requires_arc = true
   s.author       = { "Arthur Ariel Sabintsev" => "arthur@sabintsev.com" }
