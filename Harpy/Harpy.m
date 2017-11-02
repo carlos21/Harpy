@@ -334,6 +334,9 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
 - (void)showAlertOnTopOfEverything:(NSString *)currentAppStoreVersion {
     UIView *childView = [self.parentView viewWithTag:KTagAlertView];
     if (childView) {
+        if ([self.delegate respondsToSelector:@selector(harpyDidShowUpdateDialog)]){
+            [self.delegate harpyDidShowUpdateDialog];
+        }
         return;
     }
     
