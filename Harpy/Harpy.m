@@ -12,6 +12,7 @@
 /// NSUserDefault macros to store user's preferences for HarpyAlertTypeSkip
 NSString * const HarpyDefaultSkippedVersion         = @"Harpy User Decided To Skip Version Update Boolean";
 NSString * const HarpyDefaultStoredVersionCheckDate = @"Harpy Stored Date From Last Version Check";
+NSString * const kLastVersionOnAppStore = @"kLastVersionOnAppStore";
 
 /// i18n/l10n constants
 NSString * const HarpyLanguageArabic                = @"ar";
@@ -98,6 +99,27 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
     }
 
     return self;
+}
+#pragma mark - Custom Accessors
+
+- (void)setAppstoreVersion:(NSString *)appstoreVersion {
+    [[NSUserDefaults standardUserDefaults] setValue:appstoreVersion forKey:kLastVersionOnAppStore];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSString *)appstoreVersion {
+    return [[NSUserDefaults standardUserDefaults] valueForKey:kLastVersionOnAppStore];
+}
+
+- (BOOL)hasLastAppStoreVersion {
+    NSString *currentVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    if (!self.appstoreVersion) {
+        return YES;
+    }
+    if ([self.appstoreVersion isEqualToString:currentVersion]) {
+        return YES;
+    }
+    return NO;
 }
 
 #pragma mark - Public
@@ -215,6 +237,8 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
             } else {
                 if ([versionsInAppStore count]) {
                     _currentAppStoreVersion = [versionsInAppStore objectAtIndex:0];
+                    self.appstoreVersion = _currentAppStoreVersion;
+                    
                     if ([self.delegate respondsToSelector:@selector(harpyDidRetrieveAppStoreVersion:)]) {
                         [self.delegate harpyDidRetrieveAppStoreVersion:_currentAppStoreVersion];
                     }
@@ -320,7 +344,28 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
     });
 }
 
+- (AlertView *)setupAlertViewOn:(UIView *)parentView {
+    _updateAvailableMessage = [self localizedStringForKey:@"Update Available"];
+    _theNewVersionMessage = [NSString stringWithFormat:[self localizedStringForKey:@"A new version of %@ is available. Please update to version %@ now."], _appName, self.appstoreVersion];
+    
+    AlertView *alert = [AlertView createViewOn:self.parentView];
+    [alert setTag:HardyTagAlertView];
+    [alert setTitleText:_updateAvailableMessage];
+    [alert setDescriptionText:_theNewVersionMessage];
+    [alert setUpdateActionBlock:^{
+        [self launchAppStore];
+    }];
+    return alert;
+}
+
 #pragma mark - Alert Management
+
+- (void)forceShowAlertOnTopOfEverything {
+    [self setupAlertViewOn:self.parentView];
+    if ([self.delegate respondsToSelector:@selector(harpyDidShowUpdateDialog)]){
+        [self.delegate harpyDidShowUpdateDialog];
+    }
+}
 
 - (void)showAlertIfCurrentAppStoreVersionNotSkipped:(NSString *)currentAppStoreVersion {
     // Check if user decided to skip this version in the past
@@ -343,13 +388,7 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
         return;
     }
     
-    AlertView *alert = [AlertView createViewOn:self.parentView];
-    [alert setTag:HardyTagAlertView];
-    [alert setTitleText:_updateAvailableMessage];
-    [alert setDescriptionText:_theNewVersionMessage];
-    [alert setUpdateActionBlock:^{
-        [self launchAppStore];
-    }];
+    [self setupAlertViewOn:self.parentView];
     
     if ([self.delegate respondsToSelector:@selector(harpyDidShowUpdateDialog)]){
         [self.delegate harpyDidShowUpdateDialog];

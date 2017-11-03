@@ -82,6 +82,9 @@ typedef NS_ENUM(NSUInteger, HarpyAlertType)
 
 @interface Harpy : NSObject
 
+@property (nonatomic, strong) NSString *appstoreVersion;
+@property (nonatomic, assign) BOOL hasLastAppStoreVersion;
+
 /**
  The harpy delegate can be used to know when the update dialog is shown and which action a user took.
  See the protocol declaration above.
@@ -193,6 +196,7 @@ typedef NS_ENUM(NSUInteger, HarpyAlertType)
  Do not use this method if you are using @c checkVersion or @c checkVersionDaily.
  */
 - (void)checkVersionWeekly;
+- (void)forceShowAlertOnTopOfEverything;
 
 #pragma mark - Unit Testing
 
