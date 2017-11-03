@@ -116,7 +116,7 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
     if (!self.appstoreVersion) {
         return YES;
     }
-    if ([currentVersion compare:self.appstoreVersion options:NSNumericSearch] == NSOrderedAscending) {
+    if ([currentVersion compare:self.appstoreVersion options:NSNumericSearch] != NSOrderedAscending) {
         return YES;
     }
     return NO;
