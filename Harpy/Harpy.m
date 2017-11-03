@@ -215,6 +215,10 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
             } else {
                 if ([versionsInAppStore count]) {
                     _currentAppStoreVersion = [versionsInAppStore objectAtIndex:0];
+                    if ([self.delegate respondsToSelector:@selector(harpyDidRetrieveAppStoreVersion:)]) {
+                        [self.delegate harpyDidRetrieveAppStoreVersion:_currentAppStoreVersion];
+                    }
+                    
                     if ([self isAppStoreVersionNewer:_currentAppStoreVersion]) {
                         [self appStoreVersionIsNewer:_currentAppStoreVersion];
                     } else {
