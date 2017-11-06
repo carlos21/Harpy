@@ -41,6 +41,10 @@
     self.descriptionLabel.text = descriptionText;
 }
 
+- (void)setButtonText:(NSString *)text {
+    [self.updateButton setTitle:text forState:UIControlStateNormal];
+}
+
 #pragma mark - Private
 
 - (void)setupView {
@@ -52,6 +56,7 @@
     
     self.centerView.layer.cornerRadius = 10.0;
     self.centerView.layer.masksToBounds = YES;
+    
     [self.updateButton addTopBorderWithHeight:1.0 andColor:[UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1.0]];
 }
 

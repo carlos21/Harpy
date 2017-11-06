@@ -121,4 +121,8 @@
     NSLog(@"%@", message);
 }
 
+- (BOOL)isHarpyAllowedToPresentPopup {
+    return YES;
+}
+
 @end

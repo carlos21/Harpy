@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) NSString *titleText;
 @property (strong, nonatomic) NSString *descriptionText;
+@property (strong, nonatomic) NSString *updateText;
 @property (nonatomic, copy) void (^updateActionBlock)(void);
 
 + (instancetype)createViewOn:(UIView *)parentView;
