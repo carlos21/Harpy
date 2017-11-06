@@ -353,7 +353,7 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
     [alert setTag:HardyTagAlertView];
     [alert setTitleText:_updateAvailableMessage];
     [alert setDescriptionText:_theNewVersionMessage];
-    [alert setUpdateText:_updateButtonText];
+    [alert setButtonText:_updateButtonText];
     [alert setUpdateActionBlock:^{
         [self launchAppStore];
     }];
