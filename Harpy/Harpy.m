@@ -380,6 +380,9 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
 }
 
 - (void)showAlertOnTopOfEverything:(NSString *)currentAppStoreVersion {
+    if (![self.delegate isHarpyAllowedToPresentPopup]) {
+        return;
+    }
     UIView *childView = [self.parentView viewWithTag:HardyTagAlertView];
     if (childView) {
         if ([self.delegate respondsToSelector:@selector(harpyDidShowUpdateDialog)]){

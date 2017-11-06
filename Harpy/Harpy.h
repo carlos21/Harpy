@@ -70,6 +70,7 @@ static const NSInteger HardyTagAlertView  = 999192;
 - (void)harpyUserDidCancel;             // User did click on button that cancels update dialog
 - (void)harpyDidDetectNewVersionWithoutAlert:(NSString *)message; // Harpy performed version check and did not display alert
 - (void)harpyDidRetrieveAppStoreVersion:(NSString *)appstoreVersion;
+- (BOOL)isHarpyAllowedToPresentPopup;
 @end
 
 typedef NS_ENUM(NSUInteger, HarpyAlertType)
