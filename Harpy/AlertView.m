@@ -41,8 +41,8 @@
     self.descriptionLabel.text = descriptionText;
 }
 
-- (void)setButtonText:(NSString *)text {
-    [self.updateButton setTitle:text forState:UIControlStateNormal];
+- (void)setButtonText:(NSString *)buttonText {
+    [self.updateButton setTitle:buttonText forState:UIControlStateNormal];
 }
 
 #pragma mark - Private
