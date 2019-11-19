@@ -75,6 +75,8 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
 
 @implementation Harpy
 
+@synthesize parentView = _parentView;
+
 #pragma mark - Initialization
 
 + (Harpy *)sharedInstance {
