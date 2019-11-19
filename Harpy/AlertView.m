@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UIButton *updateButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 @end
 
@@ -72,6 +73,10 @@
 
 - (IBAction)updatePressed:(id)sender {
     self.updateActionBlock();
+}
+
+- (IBAction)cancelPressed:(id)sender {
+    [self removeFromSuperview];
 }
 
 #pragma mark - Public

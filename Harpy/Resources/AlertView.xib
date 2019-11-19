@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlertView">
             <connections>
+                <outlet property="cancelButton" destination="acm-Sc-TV2" id="ys6-zD-p4k"/>
                 <outlet property="centerView" destination="FjH-vE-RHr" id="wiV-0Q-qor"/>
                 <outlet property="descriptionLabel" destination="UR3-3G-9SV" id="xF6-hr-yzk"/>
                 <outlet property="titleLabel" destination="slU-Tu-yxL" id="xoW-nN-ova"/>
@@ -25,11 +24,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Izw-Yw-zKK">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FjH-vE-RHr">
-                    <rect key="frame" x="20" y="247" width="335" height="172"/>
+                    <rect key="frame" x="20" y="247.5" width="335" height="172"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="A newer version bla bla bla.. A newer version bla bla bla.. A newer version bla bla bla.." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UR3-3G-9SV">
                             <rect key="frame" x="20" y="58" width="295" height="54"/>
@@ -43,8 +42,18 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acm-Sc-TV2">
+                            <rect key="frame" x="0.0" y="132" width="157.5" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="YEg-so-DR0"/>
+                            </constraints>
+                            <state key="normal" title="Cancel"/>
+                            <connections>
+                                <action selector="cancelPressed:" destination="-1" eventType="touchUpInside" id="7WT-uj-7ml"/>
+                            </connections>
+                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWR-Yr-elW">
-                            <rect key="frame" x="0.0" y="132" width="335" height="40"/>
+                            <rect key="frame" x="157.5" y="132" width="177.5" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="TDJ-aH-QeR"/>
                             </constraints>
@@ -57,16 +66,20 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="UR3-3G-9SV" firstAttribute="top" secondItem="slU-Tu-yxL" secondAttribute="bottom" constant="15" id="2xD-25-woH"/>
+                        <constraint firstAttribute="trailing" secondItem="eWR-Yr-elW" secondAttribute="trailing" id="4A1-z7-Jyr"/>
                         <constraint firstItem="slU-Tu-yxL" firstAttribute="top" secondItem="FjH-vE-RHr" secondAttribute="top" constant="20" id="B2f-cp-H6N"/>
                         <constraint firstAttribute="bottom" secondItem="eWR-Yr-elW" secondAttribute="bottom" id="CxA-8N-n15"/>
+                        <constraint firstAttribute="bottom" secondItem="acm-Sc-TV2" secondAttribute="bottom" id="F41-Ih-cx5"/>
+                        <constraint firstAttribute="bottom" secondItem="eWR-Yr-elW" secondAttribute="bottom" id="I8C-6l-vSU"/>
+                        <constraint firstItem="acm-Sc-TV2" firstAttribute="leading" secondItem="FjH-vE-RHr" secondAttribute="leading" id="MvA-6e-Ccw"/>
                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="335" id="SB0-Ms-Ixg"/>
+                        <constraint firstItem="eWR-Yr-elW" firstAttribute="leading" secondItem="acm-Sc-TV2" secondAttribute="trailing" id="TPU-M3-UGR"/>
                         <constraint firstItem="eWR-Yr-elW" firstAttribute="top" secondItem="UR3-3G-9SV" secondAttribute="bottom" constant="20" id="WUP-Mb-0hb"/>
                         <constraint firstItem="UR3-3G-9SV" firstAttribute="trailing" secondItem="slU-Tu-yxL" secondAttribute="trailing" id="ZyS-9h-2uX"/>
-                        <constraint firstAttribute="trailing" secondItem="eWR-Yr-elW" secondAttribute="trailing" id="cVL-Lj-LWf"/>
+                        <constraint firstItem="acm-Sc-TV2" firstAttribute="width" secondItem="eWR-Yr-elW" secondAttribute="width" multiplier="0.888235" id="tFh-ed-utu"/>
                         <constraint firstAttribute="trailing" secondItem="slU-Tu-yxL" secondAttribute="trailing" constant="20" id="tTH-0x-tY0"/>
                         <constraint firstItem="UR3-3G-9SV" firstAttribute="leading" secondItem="slU-Tu-yxL" secondAttribute="leading" id="xK3-BF-SF9"/>
                         <constraint firstItem="slU-Tu-yxL" firstAttribute="leading" secondItem="FjH-vE-RHr" secondAttribute="leading" constant="20" id="xxL-7D-IQ4"/>
-                        <constraint firstItem="eWR-Yr-elW" firstAttribute="leading" secondItem="FjH-vE-RHr" secondAttribute="leading" id="zqu-Sl-i1z"/>
                     </constraints>
                 </view>
             </subviews>
@@ -82,7 +95,7 @@
                 <constraint firstItem="Izw-Yw-zKK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="zWb-oG-o7t"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-95.5" y="60.5"/>
+            <point key="canvasLocation" x="-96.799999999999997" y="59.820089955022496"/>
         </view>
     </objects>
 </document>
