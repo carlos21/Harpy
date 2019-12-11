@@ -57,6 +57,8 @@
     
     self.centerView.layer.cornerRadius = 10.0;
     self.centerView.layer.masksToBounds = YES;
+    self.titleLabel.textColor = [UIColor blackColor];
+    self.descriptionLabel.textColor = [UIColor blackColor];
     
     [self.updateButton addTopBorderWithHeight:1.0 andColor:[UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1.0]];
 }
