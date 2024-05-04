@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Izw-Yw-zKK">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FjH-vE-RHr">
@@ -42,47 +42,52 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acm-Sc-TV2">
-                            <rect key="frame" x="0.0" y="132" width="157.5" height="40"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CtR-RZ-dRF">
+                            <rect key="frame" x="0.0" y="132" width="335" height="40"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acm-Sc-TV2">
+                                    <rect key="frame" x="0.0" y="0.0" width="167.5" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="YEg-so-DR0"/>
+                                    </constraints>
+                                    <state key="normal" title="Cancel"/>
+                                    <connections>
+                                        <action selector="cancelPressed:" destination="-1" eventType="touchUpInside" id="7WT-uj-7ml"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWR-Yr-elW">
+                                    <rect key="frame" x="167.5" y="0.0" width="167.5" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="TDJ-aH-QeR"/>
+                                    </constraints>
+                                    <state key="normal" title="Update"/>
+                                    <connections>
+                                        <action selector="updatePressed:" destination="-1" eventType="touchUpInside" id="TUL-9q-AKu"/>
+                                    </connections>
+                                </button>
+                            </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="YEg-so-DR0"/>
+                                <constraint firstItem="eWR-Yr-elW" firstAttribute="width" secondItem="acm-Sc-TV2" secondAttribute="width" id="BwH-OQ-jhG"/>
                             </constraints>
-                            <state key="normal" title="Cancel"/>
-                            <connections>
-                                <action selector="cancelPressed:" destination="-1" eventType="touchUpInside" id="7WT-uj-7ml"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWR-Yr-elW">
-                            <rect key="frame" x="157.5" y="132" width="177.5" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="TDJ-aH-QeR"/>
-                            </constraints>
-                            <state key="normal" title="Update"/>
-                            <connections>
-                                <action selector="updatePressed:" destination="-1" eventType="touchUpInside" id="TUL-9q-AKu"/>
-                            </connections>
-                        </button>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="CtR-RZ-dRF" firstAttribute="leading" secondItem="FjH-vE-RHr" secondAttribute="leading" id="1yB-EL-A71"/>
                         <constraint firstItem="UR3-3G-9SV" firstAttribute="top" secondItem="slU-Tu-yxL" secondAttribute="bottom" constant="15" id="2xD-25-woH"/>
-                        <constraint firstAttribute="trailing" secondItem="eWR-Yr-elW" secondAttribute="trailing" id="4A1-z7-Jyr"/>
+                        <constraint firstAttribute="bottom" secondItem="CtR-RZ-dRF" secondAttribute="bottom" id="4FH-UG-2fG"/>
                         <constraint firstItem="slU-Tu-yxL" firstAttribute="top" secondItem="FjH-vE-RHr" secondAttribute="top" constant="20" id="B2f-cp-H6N"/>
-                        <constraint firstAttribute="bottom" secondItem="eWR-Yr-elW" secondAttribute="bottom" id="CxA-8N-n15"/>
-                        <constraint firstAttribute="bottom" secondItem="acm-Sc-TV2" secondAttribute="bottom" id="F41-Ih-cx5"/>
-                        <constraint firstAttribute="bottom" secondItem="eWR-Yr-elW" secondAttribute="bottom" id="I8C-6l-vSU"/>
-                        <constraint firstItem="acm-Sc-TV2" firstAttribute="leading" secondItem="FjH-vE-RHr" secondAttribute="leading" id="MvA-6e-Ccw"/>
+                        <constraint firstItem="CtR-RZ-dRF" firstAttribute="top" secondItem="UR3-3G-9SV" secondAttribute="bottom" constant="20" id="B3M-2U-Bpl"/>
+                        <constraint firstAttribute="trailing" secondItem="CtR-RZ-dRF" secondAttribute="trailing" id="CVr-QS-UM4"/>
                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="335" id="SB0-Ms-Ixg"/>
-                        <constraint firstItem="eWR-Yr-elW" firstAttribute="leading" secondItem="acm-Sc-TV2" secondAttribute="trailing" id="TPU-M3-UGR"/>
-                        <constraint firstItem="eWR-Yr-elW" firstAttribute="top" secondItem="UR3-3G-9SV" secondAttribute="bottom" constant="20" id="WUP-Mb-0hb"/>
                         <constraint firstItem="UR3-3G-9SV" firstAttribute="trailing" secondItem="slU-Tu-yxL" secondAttribute="trailing" id="ZyS-9h-2uX"/>
-                        <constraint firstItem="acm-Sc-TV2" firstAttribute="width" secondItem="eWR-Yr-elW" secondAttribute="width" multiplier="0.888235" id="tFh-ed-utu"/>
                         <constraint firstAttribute="trailing" secondItem="slU-Tu-yxL" secondAttribute="trailing" constant="20" id="tTH-0x-tY0"/>
                         <constraint firstItem="UR3-3G-9SV" firstAttribute="leading" secondItem="slU-Tu-yxL" secondAttribute="leading" id="xK3-BF-SF9"/>
                         <constraint firstItem="slU-Tu-yxL" firstAttribute="leading" secondItem="FjH-vE-RHr" secondAttribute="leading" constant="20" id="xxL-7D-IQ4"/>
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Izw-Yw-zKK" secondAttribute="trailing" id="2fT-eL-t3q"/>
@@ -94,7 +99,6 @@
                 <constraint firstItem="Izw-Yw-zKK" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="yAh-2q-z9y"/>
                 <constraint firstItem="Izw-Yw-zKK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="zWb-oG-o7t"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="-96.799999999999997" y="59.820089955022496"/>
         </view>
     </objects>

@@ -46,6 +46,10 @@
     [self.updateButton setTitle:buttonText forState:UIControlStateNormal];
 }
 
+- (void)hideCancelButton {
+    [self.cancelButton setHidden:YES];
+}
+
 #pragma mark - Private
 
 - (void)setupView {
@@ -83,11 +87,15 @@
 
 #pragma mark - Public
 
-+ (instancetype)createViewOn:(UIView *)parentView {
++ (instancetype)createViewOn:(UIView *)parentView forceUpdate:(BOOL)forceUpdate {
     AlertView *alert = [[AlertView alloc] initWithFrame:CGRectZero];
     alert.translatesAutoresizingMaskIntoConstraints = false;
     [parentView addSubview:alert];
     [alert createConstraintsOn:parentView];
+    if (forceUpdate) {
+        [alert hideCancelButton];
+        [parentView bringSubviewToFront:alert];
+    }
     return alert;
 }
 

@@ -171,6 +171,8 @@ typedef NS_ENUM(NSUInteger, HarpyAlertType)
  */
 + (Harpy *)sharedInstance;
 
+- (void)checkVersionOnly;
+
 /**
  Checks the installed version of your application against the version currently available on the iTunes store.
  If a newer version exists in the AppStore, Harpy prompts your user to update their copy of your app.
@@ -197,7 +199,7 @@ typedef NS_ENUM(NSUInteger, HarpyAlertType)
  Do not use this method if you are using @c checkVersion or @c checkVersionDaily.
  */
 - (void)checkVersionWeekly;
-- (void)forceShowAlertOnTopOfEverything;
+- (void)forceShowAlertOnTopOfEverything:(BOOL)forceUpdate;
 
 #pragma mark - Unit Testing
 

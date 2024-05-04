@@ -126,11 +126,19 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
 
 #pragma mark - Public
 
+- (void)checkVersionOnly {
+    if (!_presentingViewController && !_parentView) {
+        NSLog(@"[Harpy]: Please make sure that you have set _presentationViewController or _parentView before calling checkVersion, checkVersionDaily, or checkVersionWeekly.");
+    } else {
+        [self performVersionCheck:YES];
+    }
+}
+
 - (void)checkVersion {
     if (!_presentingViewController && !_parentView) {
         NSLog(@"[Harpy]: Please make sure that you have set _presentationViewController or _parentView before calling checkVersion, checkVersionDaily, or checkVersionWeekly.");
     } else {
-        [self performVersionCheck];
+        [self performVersionCheck:NO];
     }
 }
 
@@ -170,7 +178,7 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
         [self checkVersion];
     }
     
-    // If weekly condition is satisfied, perform version check 
+    // If weekly condition is satisfied, perform version check
     if ([self numberOfDaysElapsedBetweenLastVersionCheckDate] > 7) {
         [self checkVersion];
     }
@@ -178,7 +186,7 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
 
 #pragma mark - Helpers
 
-- (void)performVersionCheck {
+- (void)performVersionCheck:(BOOL)justCheck {
     NSURL *storeURL = [self itunesURL];
     NSURLRequest *request = [NSMutableURLRequest requestWithURL:storeURL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30.0];
 
@@ -188,13 +196,13 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
                                             completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                 if ([data length] > 0 && !error) { // Success
-                                                    [self parseResults:data];
+                                                    [self parseResults:data justCheck:justCheck];
                                                 }
                                             }];
     [task resume];
 }
 
-- (void)parseResults:(NSData *)data {
+- (void)parseResults:(NSData *)data justCheck:(BOOL)justCheck {
     _appData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
 
     [self printDebugMessage:[NSString stringWithFormat:@"JSON Results: %@", _appData]];
@@ -246,7 +254,9 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
                     }
                     
                     if ([self isAppStoreVersionNewer:_currentAppStoreVersion]) {
-                        [self appStoreVersionIsNewer:_currentAppStoreVersion];
+                        if (!justCheck) {
+                            [self appStoreVersionIsNewer:_currentAppStoreVersion];
+                        }
                     } else {
                         [self printDebugMessage:@"Currently installed version is newer."];
                     }
@@ -346,7 +356,7 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
     });
 }
 
-- (AlertView *)setupAlertViewOn:(UIView *)parentView {
+- (AlertView *)setupAlertViewOn:(UIView *)parentView forceUpdate:(BOOL)forceUpdate {
     _updateAvailableMessage = [self localizedStringForKey:@"Update Available"];
     _theNewVersionMessage = [NSString stringWithFormat:[self localizedStringForKey:@"A new version of %@ is available. Please update to version %@ now."], _appName, self.appstoreVersion];
     _updateButtonText = [self localizedStringForKey:@"Update"];
@@ -364,8 +374,10 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
 
 #pragma mark - Alert Management
 
-- (void)forceShowAlertOnTopOfEverything {
-    [self setupAlertViewOn:self.parentView];
+- (void)forceShowAlertOnTopOfEverything:(BOOL)forceUpdate {
+    UIView *childView = [self.parentView viewWithTag:HardyTagAlertView];
+    if (childView) { return; }
+    [self setupAlertViewOn:self.parentView forceUpdate:forceUpdate];
     if ([self.delegate respondsToSelector:@selector(harpyDidShowUpdateDialog)]){
         [self.delegate harpyDidShowUpdateDialog];
     }
@@ -376,14 +388,14 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
     NSString *storedSkippedVersion = [[NSUserDefaults standardUserDefaults] objectForKey:HarpyDefaultSkippedVersion];
 
     if (![storedSkippedVersion isEqualToString:currentAppStoreVersion]) {
-        [self showAlertOnTopOfEverything:currentAppStoreVersion];
+        [self showAlertOnTopOfEverything:currentAppStoreVersion forceUpdate:NO];
     } else {
         // Don't show alert.
         return;
     }
 }
 
-- (void)showAlertOnTopOfEverything:(NSString *)currentAppStoreVersion {
+- (void)showAlertOnTopOfEverything:(NSString *)currentAppStoreVersion forceUpdate:(BOOL)forceUpdate {
     if (![self.delegate isHarpyAllowedToPresentPopup]) {
         return;
     }
@@ -395,7 +407,7 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
         return;
     }
     
-    [self setupAlertViewOn:self.parentView];
+    [self setupAlertViewOn:self.parentView forceUpdate:forceUpdate];
     
     if ([self.delegate respondsToSelector:@selector(harpyDidShowUpdateDialog)]){
         [self.delegate harpyDidShowUpdateDialog];
