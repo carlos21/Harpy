@@ -16,6 +16,6 @@
 @property (strong, nonatomic) NSString *buttonText;
 @property (nonatomic, copy) void (^updateActionBlock)(void);
 
-+ (instancetype)createViewOn:(UIView *)parentView;
++ (instancetype)createViewOn:(UIView *)parentView forceUpdate:(BOOL)forceUpdate;
 
 @end

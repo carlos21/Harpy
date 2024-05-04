@@ -361,7 +361,7 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
     _theNewVersionMessage = [NSString stringWithFormat:[self localizedStringForKey:@"A new version of %@ is available. Please update to version %@ now."], _appName, self.appstoreVersion];
     _updateButtonText = [self localizedStringForKey:@"Update"];
     
-    AlertView *alert = [AlertView createViewOn:self.parentView];
+    AlertView *alert = [AlertView createViewOn:self.parentView forceUpdate:forceUpdate];
     [alert setTag:HardyTagAlertView];
     [alert setTitleText:_updateAvailableMessage];
     [alert setDescriptionText:_theNewVersionMessage];
