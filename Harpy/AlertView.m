@@ -94,7 +94,6 @@
     [alert createConstraintsOn:parentView];
     if (forceUpdate) {
         [alert hideCancelButton];
-        [parentView bringSubviewToFront:alert];
     }
     return alert;
 }
