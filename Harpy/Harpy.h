@@ -112,6 +112,7 @@ typedef NS_ENUM(NSUInteger, HarpyAlertType)
  @b OPTIONAL: The preferred name for the app. This name will be displayed in the @c UIAlertView in place of the bundle name.
  */
 @property (nonatomic, strong) NSString *appName;
+@property (nonatomic, strong) NSString *appID;
 
 /**
  @b OPTIONAL: Log Debug information

@@ -62,7 +62,6 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
 
 @property (nonatomic, strong) NSDictionary <NSString *, id> *appData;
 @property (nonatomic, strong) NSDate *lastVersionCheckPerformedOnDate;
-@property (nonatomic, copy) NSString *appID;
 @property (nonatomic, copy) NSString *currentInstalledVersion;
 @property (nonatomic, copy) NSString *currentAppStoreVersion;
 @property (nonatomic, copy) NSString *updateAvailableMessage;
@@ -328,19 +327,13 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
 }
 
 - (void)appStoreVersionIsNewer:(NSString *)currentAppStoreVersion {
-     _appID = _appData[@"results"][0][@"trackId"];
-
-    if (_appID == nil) {
-        [self printDebugMessage:@"appID is nil, which means to the trackId key is missing from the JSON results that Apple returned for your bundleID. If a version of your app is in the store and you are seeing this message, please open up an issue http://github.com/ArtSabintsev/Harpy and provide as much detail about your app as you can. Thanks!"];
-    } else {
-        [self localizeAlertStringsForCurrentAppStoreVersion:currentAppStoreVersion];
-        [self alertTypeForVersion:currentAppStoreVersion];
-        [self showAlertIfCurrentAppStoreVersionNotSkipped:currentAppStoreVersion];
-    }
+    [self localizeAlertStringsForCurrentAppStoreVersion:currentAppStoreVersion];
+    [self alertTypeForVersion:currentAppStoreVersion];
+    [self showAlertIfCurrentAppStoreVersionNotSkipped:currentAppStoreVersion];
 }
 
 - (void)launchAppStore {
-    NSString *iTunesString = [NSString stringWithFormat:@"https://itunes.apple.com/app/id%@", [self appID]];
+    NSString *iTunesString = [NSString stringWithFormat:@"https://apps.apple.com/app/id%@", [self appID]];
     NSURL *iTunesURL = [NSURL URLWithString:iTunesString];
 
     dispatch_async(dispatch_get_main_queue(), ^{
